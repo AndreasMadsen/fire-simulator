@@ -26,7 +26,7 @@ start = params.initial_fire(forest)
 forest[start[0], start[1], :] = params.cc["fire"]
 
 # Initalize math model
-model = Simulator("random", forest)
+model = Simulator("random_circular", forest)
 
 fig = plt.figure()
 im = plt.imshow(model.picture[:, :, 0:3], interpolation='nearest')
@@ -43,7 +43,7 @@ def animate(i):
 	im.set_data(forest)
 	return [im]
 
-anim = animation.FuncAnimation(fig, animate, init_func=init, frames=150, interval=20, blit=True, repeat=False)
+anim = animation.FuncAnimation(fig, animate, init_func=init, frames=200, interval=20, blit=True, repeat=False)
 #anim.save('basic_animation_2.mp4', writer=animation.writers['ffmpeg'](fps=30), dpi=100)
 
 plt.show()
