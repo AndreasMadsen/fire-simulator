@@ -14,7 +14,7 @@ def read_kernel(name):
 def save_device_fetch(type):
 	devices = []
 	for platform in cl.get_platforms():
-		devices = devices + platform.get_devices(device_type=cl.device_type.GPU)
+		devices = devices + platform.get_devices(device_type=type)
 
 	# Just use the first GPU device, they are all good
 	return [devices[0]]

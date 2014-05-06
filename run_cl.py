@@ -26,7 +26,7 @@ start = params.initial_fire(forest)
 forest[start[0], start[1], :] = params.cc["fire"]
 
 # Initalize math model
-model = Simulator("random_circular", forest)
+model = Simulator("random_wind", forest)
 
 fig = plt.figure()
 im = plt.imshow(model.picture[:, :, 0:3], interpolation='nearest')
