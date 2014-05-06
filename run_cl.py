@@ -5,7 +5,7 @@ import os.path as path
 
 import numpy as np
 import scipy.misc
-import matplotlib; matplotlib.use('TkAgg')
+import matplotlib; matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
