@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 
 # Load forest picture and enforce alpha layer and uint8 as datatype
-forest = scipy.misc.imread('forest.png')
+forest = scipy.misc.imread('picture/forest.png')
 if (forest.shape[2] != 4):
 	forest = np.dstack((forest, np.ones(forest.shape[0:2]) * 255))
 forest = forest.astype('uint8')

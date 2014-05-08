@@ -13,10 +13,10 @@ kernel void run(global const uchar4 *curr, global uchar4 *next, int rows, int co
 
 	if (row > 0 && row < (rows - 1) && col > 0 && col < (cols - 1)) {
 		if (curr[ this ].x == fire.x) {
-			if (curr[ left ].x == tree.x) { next[ left ] = fire; }
-			if (curr[ top ].x == tree.x) { next[ top ] = fire; }
-			if (curr[ right ].x == tree.x) { next[ right ] = fire; }
-			if (curr[ bottom ].x == tree.x) { next[ bottom ] = fire; }
+			if (curr[ left ].x == tree1.x) { next[ left ] = fire; }
+			if (curr[ top ].x == tree1.x) { next[ top ] = fire; }
+			if (curr[ right ].x == tree1.x) { next[ right ] = fire; }
+			if (curr[ bottom ].x == tree1.x) { next[ bottom ] = fire; }
 		}
 	}
 }

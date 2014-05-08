@@ -16,7 +16,7 @@ kernel void run(global const uchar4 *curr, global uchar4 *next, int rows, int co
 	int ci = row * cols + col;
 
 	if (row > 0 && row < (rows - 1) && col > 0 && col < (cols - 1)) {
-		if (curr[ ci ].x == tree.x) {
+		if (curr[ ci ].x == tree1.x) {
 			float n = isfire(curr, cols, -1, +0);
 			float e = isfire(curr, cols, +0, +1);
 			float s = isfire(curr, cols, +1, +0);
