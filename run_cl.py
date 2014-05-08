@@ -12,13 +12,13 @@ import matplotlib.animation as animation
 thisdir = path.dirname(path.realpath(__file__))
 
 # Load forest picture and enforce alpha layer and uint8 as datatype
-#forest = scipy.misc.imread('forest.png')
-forest = np.dstack((
-	np.ones((400, 400)) * params.cc["tree"][0],
-	np.ones((400, 400)) * params.cc["tree"][1],
-	np.ones((400, 400)) * params.cc["tree"][2],
-	np.ones((400, 400)) * 255
-))
+forest = scipy.misc.imread('picture/simple2.png')
+#forest = np.dstack((
+#	np.ones((400, 400)) * params.cc["tree"][0],
+#	np.ones((400, 400)) * params.cc["tree"][1],
+#	np.ones((400, 400)) * params.cc["tree"][2],
+#	np.ones((400, 400)) * 255
+#))
 forest = forest.astype('uint8')
 
 # Get and set forest fire position
@@ -26,7 +26,7 @@ start = params.initial_fire(forest)
 forest[start[0], start[1], :] = params.cc["fire"]
 
 # Initalize math model
-model = Simulator("random_wind", forest)
+model = Simulator("random_type", forest)
 
 fig = plt.figure()
 im = plt.imshow(model.picture[:, :, 0:3], interpolation='nearest')
