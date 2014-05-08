@@ -37,8 +37,6 @@ def iter_forest_fire(picture):
 
 	return picture
 
-import time
-
 fig = plt.figure()
 im = plt.imshow(np.zeros(forest.shape), interpolation='nearest')
 

@@ -15,15 +15,8 @@ kernel void run(global const uchar4 *curr, global uchar4 *next, int rows, int co
 
 	int ci = row * cols + col;
 
-	float wind_n = 1.0f;
-	float wind_s = 1.0f;
-	float wind_e = 0.5f;
-	float wind_v = 1.5f;
-
-	float wind_sv = 1.2f;
-	float wind_nv = 1.2f;
-	float wind_se = 1.0f;
-	float wind_ne = 1.0f;
+	float wind_n = 1.0f, wind_s = 1.0f, wind_e = 0.5f, wind_v = 1.5f;
+	float wind_sv = 1.2f, wind_nv = 1.2f, wind_se = 1.0f, wind_ne = 1.0f;
 
 	if (row > 0 && row < (rows - 1) && col > 0 && col < (cols - 1)) {
 		if (curr[ ci ].x == tree.x) {
@@ -37,7 +30,8 @@ kernel void run(global const uchar4 *curr, global uchar4 *next, int rows, int co
 			float sv = isfire(curr, cols, +1, -1);
 			float se = isfire(curr, cols, +1, +1);
 
-			float prop = 0.5f * (wind_n * n + wind_e * e + wind_s * s + wind_v * v) + 0.1019671561f * (wind_nv * nv + wind_ne * ne + wind_sv * sv + wind_se * se);
+			float prop = 0.5f * (wind_n * n + wind_e * e + wind_s * s + wind_v * v)
+					   + 0.10197f * (wind_nv * nv + wind_ne * ne + wind_sv * sv + wind_se * se);
 
 			if (prop >= rands[ci]) {
 				next[ci] = fire;
