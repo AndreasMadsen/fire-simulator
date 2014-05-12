@@ -11,15 +11,8 @@ import matplotlib.animation as animation
 
 thisdir = path.dirname(path.realpath(__file__))
 
-# Load forest picture and enforce alpha layer and uint8 as datatype
-forest = scipy.misc.imread('picture/simple2.png')
-#forest = np.dstack((
-#	np.ones((400, 400)) * params.cc["tree"][0],
-#	np.ones((400, 400)) * params.cc["tree"][1],
-#	np.ones((400, 400)) * params.cc["tree"][2],
-#	np.ones((400, 400)) * 255
-#))
-forest = forest.astype('uint8')
+# Load forest picture
+forest = np.load('picture/forest2.npy')
 
 # Get and set forest fire position
 start = params.initial_fire(forest)

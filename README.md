@@ -1,9 +1,26 @@
 # Forest Fire Simulation
 
-This amazing product enables pyromaniacs to satisfy their needs. This can be achieved through epic forest fire simulations made in python.
+This amazing product enables pyromaniacs to satisfy their needs. This can be achieved through epic forest fire simulations made in python. _We are neither liable nor responsible for anything. Only burn a forest if it's your property._
 
-## Legal Disclaimer
-We are neither liable nor responsible for anything. Only burn a forest if it's your property.
+## How to run
+
+The main interface started by `python run_cl.py`, this requires an OpenCL GPU device and quite a few packages. In case you have access to the DTU HPC system, you can use this guide to get started:
+https://gist.github.com/AndreasMadsen/45050d426e411e985703
+
+The simulation can then be configured by selecting a picture with:
+
+```python
+forest = np.load('picture/forest2.npy')
+```
+
+and a simulation model with:
+
+```python
+model = Simulator("random_type", forest)
+```
+
+Look in the picture and kernels directory, to see which pictures and models are available.
+
 
 ##License
 
